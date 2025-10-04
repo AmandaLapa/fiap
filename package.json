@@ -1,0 +1,51 @@
+{
+	"name": "insanyplate-next",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"dev": "next dev",
+		"build": "next build",
+		"start": "next start",
+		"lint": "next lint",
+		"prepare": "husky install",
+		"commit": "cz"
+	},
+	"dependencies": {
+		"@types/node": "20.10.3",
+		"@types/react": "18.2.42",
+		"@types/react-dom": "18.2.17",
+		"eslint": "8.55.0",
+		"eslint-config-next": "14.0.3",
+		"framer-motion": "^10.15.1",
+		"gsap": "^3.12.2",
+		"jack-o-hook": "^1.0.7",
+		"next": "14.0.3",
+		"react": "18.2.0",
+		"react-dom": "18.2.0",
+		"styled-components": "^6.0.7",
+		"swiper": "^11.0.5",
+		"typescript": "5.3.2"
+	},
+	"devDependencies": {
+		"@commitlint/config-conventional": "^18.4.3",
+		"@types/gsap": "^3.0.0",
+		"@types/styled-components": "^5.1.26",
+		"@typescript-eslint/eslint-plugin": "^6.3.0",
+		"commitizen": "^4.3.0",
+		"eslint-config-prettier": "^9.0.0",
+		"eslint-plugin-no-comments": "^1.1.10",
+		"eslint-plugin-prettier": "^5.0.0",
+		"husky": "^8.0.3",
+		"prettier": "^3.0.1"
+	},
+	"eslintConfig": {
+		"eslintConfig": {
+			"extends": "./.eslintrc.json"
+		}
+	},
+	"config": {
+		"commitizen": {
+			"path": "cz-conventional-changelog"
+		}
+	}
+}
