@@ -1,7 +1,10 @@
 import { createGlobalStyle } from "styled-components";
+import variables from "./variables";
 
 export const GlobalStyle = createGlobalStyle`
 	* {
+		scrollbar-width: thin;
+		scrollbar-color: ${variables.colors.primary[100]} ${variables.colors.neutral[400]};
 		list-style: none;
 		text-decoration: none;
 		margin: 0;
@@ -16,6 +19,7 @@ export const GlobalStyle = createGlobalStyle`
 		outline: 0;
 		font-weight: normal;
 		font-size: 1.6rem;
+		color: ${variables.colors.neutral[100]};
 	}
 
 	button {
@@ -31,12 +35,13 @@ export const GlobalStyle = createGlobalStyle`
 	html,
 	body {
 		overflow-x: hidden;
+		font-family: var(--roboto), sans-serif;
+		background-color: ${variables.colors.neutral[500]};
 	}
 
 	html {
 		font-size: 62.5%;
 		scroll-behavior: smooth;
-		overflow: overlay;
 		
 		@media (max-width: 1250px) {
 			font-size: 55%;
@@ -50,5 +55,26 @@ export const GlobalStyle = createGlobalStyle`
 	button,
 	textarea {
 		appearance: none;
+	}
+
+	h1, h2, h3, h4, h5, h6 {
+		font-family: var(--montserrat), sans-serif;
+	}
+
+	::-webkit-scrollbar {
+		width: 1rem;
+	}
+
+	::-webkit-scrollbar-track {
+		background: ${variables.colors.neutral[400]};
+	}
+
+	::-webkit-scrollbar-thumb {
+		background: ${variables.colors.primary[100]};
+
+	}
+
+	::-webkit-scrollbar-corner {
+		background: ${variables.colors.neutral[400]};
 	}
 `;

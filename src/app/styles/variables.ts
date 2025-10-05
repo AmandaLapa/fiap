@@ -2,23 +2,24 @@ const variables = {
 	z_indexes: ["modals", "header", "element", "content"],
 
 	colors: {
-		primary: "#fff",
-
-		black: "#000",
-		white: "#fff",
+		primary: {
+			100: "#F80D5A",
+			200: "#ED145B",
+		},
 
 		neutral: {
-			100: "#1d242b",
-			200: "#313D49",
-			300: "#5A636D",
-			400: "#8C9197",
-			500: "#BCC2C8",
-			600: "#F3f4f7",
+			100: "#ffffff",
+			200: "#8A959B",
+			300: "#545555",
+			400: "#202121",
+			500: "#000000",
+			600: "#141313",
 		},
 	},
 
 	fonts: {
-		primary: "var(--inter), sans-serif",
+		primary: "var(--roboto), sans-serif",
+		heading: "var(--montserrat), sans-serif",
 	},
 };
 

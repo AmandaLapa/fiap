@@ -1,9 +1,20 @@
 import { NextPage } from "next";
+import Hero from "./components/hero";
+import Marquee from "./components/marquee";
+import Scroll from "./components/scroll";
+import Wave from "./components/wave";
+import Courses from "./components/courses";
+import Faq from "./components/faq";
 
 const Home: NextPage = () => {
 	return (
 		<main>
-			<h1 style={{ fontWeight: "800" }}>Insany</h1>
+			<Hero />
+			<Marquee />
+			<Scroll />
+			<Wave />
+			<Courses />
+			<Faq />
 		</main>
 	);
 };

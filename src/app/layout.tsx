@@ -1,33 +1,40 @@
-import { Inter } from "next/font/google";
+import { Roboto, Montserrat } from "next/font/google";
 import StyledComponentsRegistry from "../lib/registry";
 import { Viewport } from "next";
+import Header from "@/ui/core/header";
+import { Footer } from "@/ui/core";
 
-const inter = Inter({
+const roboto = Roboto({
 	subsets: ["latin"],
 	display: "swap",
-	variable: "--inter",
+	variable: "--roboto",
+	weight: ["300", "400", "500", "700"],
+});
+
+const montserrat = Montserrat({
+	subsets: ["latin"],
+	display: "swap",
+	variable: "--montserrat",
 	weight: ["400", "500", "600", "700", "800"],
 });
 
 export async function generateMetadata() {
 	return {
-		metadataBase: new URL("https://insanydesign.com/"),
+		metadataBase: new URL("https://www.fiap.com.br/"),
 		title: {
-			default: "template-insany",
-			template: `%s - insany`,
+			default: "Fiap",
 		},
 
-		description: "lorem ipsum",
+		description: "A melhor faculdade de tecnologia",
 		robots: "/robots.txt",
 
 		openGraph: {
 			type: "website",
-			title: `Acessar template-insany`,
-			description: "lorem ipsum",
-			siteName: "Insany-name",
+			title: `Fiap`,
+			description: "A melhor faculdade de tecnologia",
+			siteName: "Fiap",
 			locale: "pt_BR",
-			alternateLocale: "en_US",
-			url: "https://insanydesign.com",
+			url: "https://www.fiap.com.br/",
 			countryName: "Brasil",
 
 			images: [
@@ -37,20 +44,14 @@ export async function generateMetadata() {
 					alt: "Open Graph Visual Image",
 					type: "jpg",
 				},
-				{
-					url: "/cover.png",
-					secureUrl: "/cover.png",
-					alt: "Open Graph Visual Image",
-					type: "png",
-				},
 			],
 		},
 
 		twitter: {
-			title: `Acessar template-insany`,
-			description: "lorem ipsum",
+			title: `Fiap`,
+			description: "A melhor faculdade de tecnologia",
 			card: "summary_large_image",
-			creator: "@insanydesign",
+			creator: "@amandalapa",
 
 			images: [
 				{
@@ -58,12 +59,6 @@ export async function generateMetadata() {
 					secureUrl: "/cover.jpg",
 					alt: "Open Graph Visual Image",
 					type: "jpg",
-				},
-				{
-					url: "/cover.png",
-					secureUrl: "/cover.png",
-					alt: "Open Graph Visual Image",
-					type: "png",
 				},
 			],
 		},
@@ -93,8 +88,8 @@ export async function generateMetadata() {
 
 		authors: [
 			{
-				name: "Insany Design",
-				url: "https://insany.design",
+				name: "Amanda Lapa",
+				url: "https://amandalapa.io/",
 			},
 		],
 		appleWebApp: true,
@@ -102,7 +97,7 @@ export async function generateMetadata() {
 }
 
 export const viewport: Viewport = {
-	themeColor: "#000",
+	themeColor: "#000000",
 	colorScheme: "normal",
 	width: "device-width",
 	initialScale: 1,
@@ -116,8 +111,12 @@ export default async function RootLayout({
 }) {
 	return (
 		<html lang="pt-br">
-			<body className={`${inter.variable}`}>
-				<StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+			<body className={`${roboto.variable} ${montserrat.variable}`}>
+				<StyledComponentsRegistry>
+					<Header />
+					{children}
+					<Footer />
+				</StyledComponentsRegistry>
 			</body>
 		</html>
 	);
